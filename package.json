@@ -1,0 +1,27 @@
+{
+    "author": {
+        "name": "Sergey Nikitin",
+        "email": "nik.pasaran@gmail.com",
+        "url": "https://github.com/pasaran"
+    },
+    "name": "templates-test",
+    "version": "0.0.0",
+    "homepage": "https://github.com/pasaran/templates-test",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/pasaran/templates-test.git"
+    },
+    "dependencies": {
+        "jade": "*",
+        "handlebars": "*",
+        "yate": "*"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/pasaran/teya/raw/master/LICENSE"
+    }
+}
+

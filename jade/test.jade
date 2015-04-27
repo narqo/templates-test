@@ -1,0 +1,23 @@
+mixin list
+    ul.list
+        block
+
+mixin list_item( selected )
+    - var classes = ( selected ) ? 'selected' : '';
+    li.list__item( class = classes )
+        block
+
+mixin link( url )
+    a.link( url = url )
+        block
+
+-var items = data.item;
+
++list
+    each item in items
+        - var selected = item.selected;
+        - var url = "/?id=" + item.id;
+
+        +list_item( selected )
+            +link( url ) #{ item.text }
+

@@ -1,0 +1,24 @@
+list
+    <ul class="list">
+        ...
+
+list.item
+    <li class="list__item">
+        ...
+
+link
+    <a class="link">
+        ...
+
+page
+    list
+        for .item
+            item
+                if .selected
+                    @class += " selected"
+
+                link
+                    @href = "/page?id={ .id }"
+
+                    .text
+
