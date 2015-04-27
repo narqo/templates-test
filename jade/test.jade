@@ -8,7 +8,7 @@ mixin list_item( selected )
         block
 
 mixin link( url )
-    a.link( url = url )
+    a.link( href = url )
         block
 
 -var items = data.item;
@@ -16,7 +16,7 @@ mixin link( url )
 +list
     each item in items
         - var selected = item.selected;
-        - var url = "/?id=" + item.id;
+        - var url = "/page?id=" + item.id;
 
         +list_item( selected )
             +link( url ) #{ item.text }

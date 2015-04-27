@@ -2,7 +2,7 @@ var Handlebars = require( 'handlebars' );
 require( './test.handlebars.compiled.js' );
 
 Handlebars.registerPartial( 'link',
-    '<a href="/page?id={{ id }}">{{ content }}</a>'
+    '<a class="link" href="/page?id={{ id }}">{{ content }}</a>'
 );
 
 var config = require( '../config.js' );
