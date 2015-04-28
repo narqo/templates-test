@@ -1,4 +1,4 @@
-var template = require( './test.teya.compiled.js' );
+var template = require( './test.teya.min.js' );
 
 var config = require( '../config.js' );
 var data = config.data;

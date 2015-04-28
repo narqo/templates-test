@@ -1,6 +1,6 @@
 var yr = require( 'yate/lib/runtime.js' );
 
-require( './test.yate.compiled.js' );
+require( './test.yate.min.js' );
 
 var config = require( '../config.js' );
 var data = config.data;
