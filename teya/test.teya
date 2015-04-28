@@ -62,10 +62,9 @@ mark-select
     select
         @class += " select_role_mark"
         @data-bem = {
+            //  FIXME: Сделать, чтобы можно было разбить на строки.
             "select": {
-                "name": "search[mark][]"
-                "optionsMaxHeight": 292
-                "text": "Марка: любая"
+                "name": "search[mark][]", "optionsMaxHeight": 292, "text": "Марка: любая"
             }
         }
 
@@ -101,10 +100,9 @@ mark-folder-select
     select
         @class += " select_role_folder"
         @data-bem = {
+            //  FIXME: Сделать, чтобы можно было разбить на строки.
             "select": {
-                "name": "search[mark-folder][]"
-                "optionsMaxHeight": 292
-                "text": "Модель: любая"
+                "name": "search[mark-folder][]", "optionsMaxHeight": 292, "text": "Модель: любая"
             }
         }
 
@@ -152,10 +150,9 @@ generation-select
     select
         @class += " select_role_generation"
         @data-bem = {
+            //  FIXME: Сделать, чтобы можно было разбить на строки.
             "select": {
-                "name": "search[mark-folder-generation]"
-                "optionsMaxHeight": 292
-                "text": "Поколение: любое"
+                "name": "search[mark-folder-generation]", "optionsMaxHeight": 292, "text": "Поколение: любое"
             }
         }
 
@@ -193,9 +190,8 @@ engine-type-select
         @class += " select_width_half select_tree"
         @data-bem = {
             "select": {
-                "name": "search[engine_type]"
-                "text": "Двигатель"
-                "default": "любой"
+                //  FIXME: Сделать, чтобы можно было разбить на строки.
+                "name": "search[engine_type]", "text": "Двигатель", "default": "любой"
             }
         }
 
@@ -211,6 +207,34 @@ engine-type-select
                 @class += " select__menu"
 
                 menu.group
+                    for .engine_type
+                        alias = .alias
+
+                        menu.item
+                            if alias
+                                @data-body-alias = alias
+
+                            @data-bem: {
+                                "menu-item": {
+                                    "val": .id
+                                }
+                            }
+
+                            .name
+
+                        for .items
+                            menu.item
+                                if alias
+                                    @data-body-alias = alias
+
+                                @data-bem: {
+                                    "menu-item": {
+                                        "val": .id
+                                    }
+                                }
+
+                                .name
+
 
 //  ---------------------------------------------------------------------------------------------------------------  //
 //  Форма
@@ -220,5 +244,5 @@ page
     mark-select
     //  mark-folder-select
     //  generation-select
-    //  body-type-select
+    //  engine-type-select
 
