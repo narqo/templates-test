@@ -12,5 +12,5 @@ for ( var i = 0; i < N; i++ ) {
 }
 console.timeEnd( 'yate' );
 
-console.log( r );
+console.error( r );
 

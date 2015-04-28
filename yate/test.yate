@@ -1,0 +1,68 @@
+match / mark-select {
+    <div class="select select_mode_radio select_theme_islands select_size_s select_width_mmm i-bem select_role_mark">
+        @data-bem = {
+            "select": {
+                "name": "search[mark][]"
+                "optionsMaxHeight": 292
+                "text": "Марка: любая"
+            }
+        }
+
+        //  FIXME: value должно браться откуда-то.
+        <input type="hidden" name="search[mark][]" class="select__control" value="30"/>
+
+        <button class="button button_size_s button_theme_islands button__control i-bem select__button" role="button" type="button">
+            @data-bem = {
+                "button": {}
+            }
+
+            <span class="button__text">
+                "BMW"
+            </span>
+            <i class="icon select__tick" aria-hidden="true"></i>
+        </button>
+
+        <div class="popup popup_target_anchor popup_theme_islands popup_autoclosable i-bem">
+            @data-bem = {
+                "popup": {
+                    "directions": [
+                        "bottom-left"
+                        "bottom-right"
+                        "top-left"
+                        "top-right"
+                    ]
+                }
+            }
+
+            <div class="menu menu_size_s menu_theme_islands menu_mode_radio menu__control i-bem select__menu" role="menu" style="min-width: 187px">
+                @data-bem = {
+                    "menu": {}
+                }
+
+                //  FIXME: Тут где-то должен быть separator или две menu.group.
+                <div class="menu__group" role="group">
+                    for .mark {
+                        <div class="menu-item menu-item_them_islands i-bem" role="menuitem">
+                            @data-bem = {
+                                "menu-item": {
+                                    "val": .id
+                                }
+                            }
+
+                            .name
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+//  Форма
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+match / {
+    apply / mark-select
+}
+

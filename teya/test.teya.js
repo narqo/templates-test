@@ -10,5 +10,5 @@ for ( var i = 0; i < N; i++ ) {
 }
 console.timeEnd( 'teya' );
 
-console.log( r );
+console.error( r );
 
