@@ -1,0 +1,224 @@
+//  ---------------------------------------------------------------------------------------------------------------  //
+//  Общие блоки/компоненты.
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+select
+    <div class="select select_mode_radio select_theme_islands select_size_s select_width_mmm i-bem">
+        ...
+
+select.tick
+    <i class="icon select__tick" aria-hidden="true">
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+button
+    <button class="button button_size_s button_theme_islands button__control i-bem" role="button" type="button">
+        @data-bem = {
+            "button": {}
+        }
+
+        ...
+
+button.text
+    <span class="button__text">
+        ...
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+menu
+    <div class="menu menu_size_s menu_theme_islands menu_mode_radio menu__control i-bem" role="menu" style="min-width: 187px">
+        @data-bem = {
+            "menu": {}
+        }
+
+        ...
+
+menu.group
+    <div class="menu__group" role="group">
+        ...
+
+menu.item
+    <div class="menu-item menu-item_them_islands i-bem" role="menuitem">
+        ...
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+popup
+    <div class="popup popup_target_anchor popup_theme_islands popup_autoclosable i-bem">
+        @data-bem = {
+            "popup": {
+                "directions": [ "bottom-left", "bottom-right", "top-left", "top-right" ]
+            }
+        }
+
+        ...
+
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+//  Элементы формы: селекты, чекбоксы, ...
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+mark-select
+    select
+        @class += " select_role_mark"
+        @data-bem = {
+            "select": {
+                "name": "search[mark][]"
+                "optionsMaxHeight": 292
+                "text": "Марка: любая"
+            }
+        }
+
+        //  FIXME: value должно браться откуда-то.
+        <input type="hidden" name="search[mark][]" class="select__control" value="30">
+
+        button
+            @class += " select__button"
+
+            text
+                "BMW"
+            select.tick
+
+        popup
+            menu
+                @class += " select__menu"
+
+                //  FIXME: Тут где-то должен быть separator или две menu.group.
+                menu.group
+                    for .mark
+                        menu.item
+                            @data-bem: {
+                                "menu-item": {
+                                    "val": .id
+                                }
+                            }
+
+                            .name
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+mark-folder-select
+    select
+        @class += " select_role_folder"
+        @data-bem = {
+            "select": {
+                "name": "search[mark-folder][]"
+                "optionsMaxHeight": 292
+                "text": "Модель: любая"
+            }
+        }
+
+        //  FIXME: value должно браться откуда-то.
+        <input type="hidden" name="search[mark-folder][]" class="select__control" value="30-30177">
+
+        button
+            @class += " select__button"
+
+            text
+                "X5"
+            select.tick
+
+        popup
+            menu
+                @class += " select__menu"
+
+                menu.group
+                    for .mark_folder
+                        id = "{ .mark_id }-{ .id }"
+
+                        menu.item
+                            @data-bem: {
+                                "menu-item": {
+                                    "val": id
+                                }
+                            }
+
+                            .name
+
+                        for .items
+                            menu.item
+                                @data-bem: {
+                                    "menu-item": {
+                                        "val": "{ id }_{ .id }"
+                                    }
+                                }
+
+                                .name
+
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+generation-select
+    select
+        @class += " select_role_generation"
+        @data-bem = {
+            "select": {
+                "name": "search[mark-folder-generation]"
+                "optionsMaxHeight": 292
+                "text": "Поколение: любое"
+            }
+        }
+
+        button
+            @class += " select__button"
+
+            text
+                "Поколение: любое"
+            select.tick
+
+        popup
+            menu
+                @class += " select__menu"
+
+                menu.group
+                    id = "{ .generation.mark_id }-{ .generation.id }"
+
+                    for .generation.items
+                        menu.item
+                            @data-bem: {
+                                "menu-item": {
+                                    "val": "{ id }_{ .id }"
+                                }
+                            }
+
+                            .name
+                            <br>
+                            "{ .start_year_production }-{ .end_year_production }"
+
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+engine-type-select
+    select
+        @class += " select_width_half select_tree"
+        @data-bem = {
+            "select": {
+                "name": "search[engine_type]"
+                "text": "Двигатель"
+                "default": "любой"
+            }
+        }
+
+        button
+            @class += " select__button"
+
+            text
+                "Двигатель: любой"
+            select.tick
+
+        popup
+            menu
+                @class += " select__menu"
+
+                menu.group
+
+//  ---------------------------------------------------------------------------------------------------------------  //
+//  Форма
+//  ---------------------------------------------------------------------------------------------------------------  //
+
+page
+    mark-select
+    //  mark-folder-select
+    //  generation-select
+    //  body-type-select
+
