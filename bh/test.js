@@ -5,15 +5,10 @@ var bh = require('./test.bh'),
     data = config.data.mark;
 
 console.time('bh');
-
 for (var i = 0; i < N; i++) {
-    try {
-        var res = bh.apply(priv(data));
-
-        //console.log(res);
-    } catch (e) {
-        return 'Execution error:\n' + e.stack;
-    }
+    var res = bh.apply(priv(data));
 }
-
 console.timeEnd('bh');
+
+console.error(res);
+
