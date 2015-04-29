@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "alias": "g_sedan",
         "name": "Седан"
@@ -63,5 +63,5 @@
         "alias": "g_cabrio",
         "name": "Кабриолет"
     }
-]
+];
 

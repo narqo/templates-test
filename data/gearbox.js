@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "id": "automatic_all",
         "alias": "automatic",
@@ -23,5 +23,5 @@
         "alias": "manual",
         "name": "Механика"
     }
-]
+];
 

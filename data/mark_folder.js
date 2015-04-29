@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "id": "0",
         "mark_id": "30",
@@ -645,4 +645,5 @@
         "mark_id": "30",
         "name": "Z8"
     }
-]
+];
+

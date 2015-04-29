@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "id": "gasoline",
         "alias": "gasoline",
@@ -38,5 +38,5 @@
         "id": "atmo",
         "name": "Атмосферный"
     }
-]
+];
 

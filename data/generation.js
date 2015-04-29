@@ -1,4 +1,4 @@
-{
+module.exports = {
     "id": "30177",
     "mark_id": "30",
     "items": [
@@ -33,5 +33,5 @@
             "end_year_production": "2003"
         }
     ]
-}
+};
 
