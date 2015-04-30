@@ -295,3 +295,18 @@ block('menu').elem('group')(
         })
     )
 );
+
+// ------------------------------ menu-item
+
+block('menu-item')(
+    js()(function() {
+        return { val : this.ctx.val };
+    }),
+    attrs()({ role : 'menuitem' }),
+    match(this._menuMods).def()(function() {
+        var mods = this.mods;
+        mods.theme = mods.theme || this._menuMods.theme;
+        mods.disabled = mods.disabled || this._menuMods.disabled;
+        applyNext();
+    })
+);
