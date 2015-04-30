@@ -13,7 +13,8 @@
     },
     "dependencies": {
         "uglify-js": "*",
-        "bh": "4.0.0"
+        "bh": "4.0.0",
+        "bem-xjst": "1.0.0"
     },
     "engines": {
         "node": "*"

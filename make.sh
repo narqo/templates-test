@@ -1,10 +1,8 @@
 #!/bin/sh
 
-cd yate
-./make.sh
-cd ..
-
-cd teya
-./make.sh
-cd ..
-
+for engine in yate teya bh bemhtml; do
+  echo make $engine
+  cd $engine
+  [ -x "make.sh" ] && ( ./make.sh )
+  cd ..
+done
